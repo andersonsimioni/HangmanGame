@@ -1,0 +1,43 @@
+format 222
+
+classcanvas 128123 class_ref 128123 // Player
+  simpleclassdiagramsettings end
+  xyz 8 218 2000
+end
+subject 128251 ""
+  xyzwh 103 56 2000 440 379
+usecasecanvas 128379 usecase_ref 128123 // NewGame
+  xyzwh 212 120 3005 67 39 label_xy 214 159
+end
+usecasecanvas 128763 usecase_ref 128507 // ExitGame
+  xyzwh 213 350 3005 67 39 label_xy 216 389
+end
+textcanvas 128891 "Hangman game"
+  xyzwh 109 63 2005 94 22
+usecasecanvas 129531 usecase_ref 128635 // CreatePlayer
+  xyzwh 435 75 3010 67 39 label_xy 430 114
+end
+usecasecanvas 129787 usecase_ref 128763 // PlayLetter
+  xyzwh 213 278 3005 67 39 label_xy 213 317
+end
+usecasecanvas 130299 usecase_ref 128891 // StartGame
+  xyzwh 212 206 3005 64 32 label_xy 212 238
+end
+classcanvas 131451 class_ref 128507 // WorldList
+  simpleclassdiagramsettings end
+  xyz 630 185 2000
+end
+line 129019 ----
+  from ref 128123 z 3006 to ref 128379
+line 129403 ----
+  from ref 128123 z 3006 to ref 128763
+simplerelationcanvas 129659 simplerelation_ref 128123
+  from ref 128379 z 3011 stereotype "<<include>>" xyz 320 115 3000 to ref 129531
+end
+line 130171 ----
+  from ref 128123 z 3006 to ref 129787
+line 130427 ----
+  from ref 128123 z 3006 to ref 130299
+line 133243 ----
+  from ref 128379 z 3006 to ref 131451
+end

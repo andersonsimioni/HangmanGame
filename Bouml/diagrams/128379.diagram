@@ -1,0 +1,28 @@
+format 222
+
+classcanvas 128123 class_ref 128123 // Player
+  classdiagramsettings member_max_width 0 end
+  xyz 36 45 2000
+end
+classcanvas 128251 class_ref 128251 // Game
+  classdiagramsettings member_max_width 0 end
+  xyz 241 32 2000
+end
+classcanvas 128379 class_ref 128379 // FileIO
+  classdiagramsettings member_max_width 0 end
+  xyz 724 64 2000
+end
+classcanvas 128507 class_ref 128507 // WorldList
+  classdiagramsettings member_max_width 0 end
+  xyz 556 40 2000
+end
+classcanvas 128763 class_ref 128635 // SecretWord
+  classdiagramsettings member_max_width 0 end
+  xyz 404 245 2000
+end
+relationcanvas 128635 relation_ref 128123 // <association>
+  from ref 128507 z 2001 to ref 128379
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+end

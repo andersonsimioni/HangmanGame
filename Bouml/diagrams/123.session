@@ -1,0 +1,18 @@
+window_sizes 1920 1013 450 1464 827 128
+
+diagrams
+  usecasediagram_ref 128123 // Diagram
+    1171 661 100 A4 0 0
+  active  classdiagram_ref 128379 // ClassDiagram
+    1464 827 100 A4 0 0
+  sequencediagram_ref 128251 // SequenceDiagram
+    114 98 100 A4 0 0
+end
+show_stereotypes
+selected classdiagram_ref 128379 // ClassDiagram
+open
+  class_ref 128507 // WorldList
+  class_ref 128251 // Game
+  class_ref 128635 // SecretWord
+end
+end
