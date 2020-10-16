@@ -481,6 +481,17 @@ format 222
 	
 	
       end
+
+      operation 136187 "EndGame"
+	private explicit_return_type ""
+	nparams 1
+	  param in name "result" explicit_type "PlayResult"
+	
+	
+	
+	
+	
+      end
     end
 
     class 128379 "FileIO"

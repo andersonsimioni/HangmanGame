@@ -2,7 +2,7 @@ format 222
 
 classcanvas 128123 class_ref 128123 // Player
   classdiagramsettings member_max_width 0 end
-  xyz 27 40 2000
+  xyz 23 45 2000
 end
 classcanvas 128251 class_ref 128251 // Game
   classdiagramsettings member_max_width 0 end
