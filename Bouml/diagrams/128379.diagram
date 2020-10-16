@@ -6,7 +6,7 @@ classcanvas 128123 class_ref 128123 // Player
 end
 classcanvas 128251 class_ref 128251 // Game
   classdiagramsettings member_max_width 0 end
-  xyz 238 22 2000
+  xyz 238 11 2000
 end
 classcanvas 128379 class_ref 128379 // FileIO
   classdiagramsettings member_max_width 0 end
