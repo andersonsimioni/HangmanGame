@@ -1,5 +1,7 @@
 package univali.andersonsimioni.UnitTest;
 
+import java.util.ArrayList;
+
 /**
  * All test functions of Files.FileIO
  */
@@ -9,8 +11,11 @@ public class FileIO {
      * Test ReadLines function of Files.FileIO,
      * this test use 'ReadLines.txt' file in local path
      */
-    public void TestReadLines(){
-        
+    public static void TestReadLines(){
+        ArrayList<String> lines = univali.andersonsimioni.Files.FileIO.ReadLines("ReadLines.txt");
+
+        for (String line:lines)
+            System.out.println(line);
     }
 
 }
