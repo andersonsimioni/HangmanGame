@@ -1,6 +1,6 @@
 format 222
 "Hangman" // Hangman
-  revision 1
+  revision 2
   modified_by 123 "DEBUG"
   // class settings
   
@@ -96,6 +96,14 @@ format 222
 	
 	
 	
+      end
+
+      classrelation 135291 // <association>
+	relation 134907 ----
+	  a role_name "" private
+	    classrelation_ref 135291 // <association>
+	  b role_name "" private
+	    classrelation_ref 135419 // <association>
       end
     end
 
@@ -324,6 +332,22 @@ format 222
 	
 	
       end
+
+      classrelation 134779 // <association>
+	relation 134651 ----
+	  a role_name "" private
+	    classrelation_ref 134779 // <association>
+	  b role_name "" private
+	    classrelation_ref 134907 // <association>
+      end
+
+      classrelation 135035 // <association>
+	relation 134779 ----
+	  a role_name "" private
+	    classrelation_ref 135035 // <association>
+	  b role_name "" private
+	    classrelation_ref 135163 // <association>
+      end
     end
   end
 
@@ -439,6 +463,14 @@ format 222
 	
 	
       end
+
+      classrelation 134907 // <association>
+	relation_ref 134651 // <association>
+      end
+
+      classrelation 135419 // <association>
+	relation_ref 134907 // <association>
+      end
     end
 
     class 128379 "FileIO"
@@ -530,6 +562,10 @@ format 222
 	
 	
 	
+      end
+
+      classrelation 135163 // <association>
+	relation_ref 134779 // <association>
       end
     end
   end
