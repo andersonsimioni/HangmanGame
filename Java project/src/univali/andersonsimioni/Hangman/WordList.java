@@ -5,7 +5,7 @@ import univali.andersonsimioni.Math.PrettyRandom;
 import java.util.ArrayList;
 
 public class WordList {
-    private final ArrayList<String> wordlist;
+    private final ArrayList<String> Wordlist;
     private final String FileName = "WordList.txt";
 
     /**
@@ -13,8 +13,8 @@ public class WordList {
      * @return new SecretWord
      */
     public SecretWord getSecretWord(){
-        Integer linesNumber = this.wordlist.size();
-        String secret = this.wordlist.get(PrettyRandom.Get(0, linesNumber));
+        Integer linesNumber = this.Wordlist.size();
+        String secret = this.Wordlist.get(PrettyRandom.Get(0, linesNumber));
 
         return new SecretWord(secret);
     }
@@ -25,6 +25,6 @@ public class WordList {
      */
     public WordList() {
         ArrayList<String> lines = univali.andersonsimioni.Files.FileIO.ReadLines(FileName);
-        this.wordlist = lines;
+        this.Wordlist = lines;
     }
 }
