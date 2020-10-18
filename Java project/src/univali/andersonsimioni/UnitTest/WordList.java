@@ -12,7 +12,7 @@ public class WordList {
      * this test use 'WordList.txt' file in local path
      */
     public static void testWordList() {
-        univali.andersonsimioni.Hangman.WordList wordList = new univali.andersonsimioni.Hangman.WordList("WordList.txt");
+        univali.andersonsimioni.Hangman.WordList wordList = new univali.andersonsimioni.Hangman.WordList();
         System.out.println(wordList.getSecretWord());
     }
 }
