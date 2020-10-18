@@ -7,12 +7,12 @@ public class SecretWord {
     /**
      * Player round result
      */
-    enum PlayResult{
+    public enum PlayResult{
         LoseGame,
         WinGame,
         WrongLetter,
-        CorrectLetter,
         InvalidSize,
+        CorrectLetter,
         LetterAlreadyPlayed
     }
 
@@ -21,9 +21,39 @@ public class SecretWord {
     private final ArrayList<String> WrongLetters;
 
     /**
+     * Render in DOS console correct played letters
+     */
+    public void renderCorrectLetters(){
+        if(CorrectLetters == null || CorrectLetters.size() == 0)
+            return;
+
+        String data = "-> Correct played letters: [ ";
+        for(String l:CorrectLetters)
+            data += l + "; ";
+
+        data += "]";
+        System.out.println(data);
+    }
+
+    /**
+     * Render all played wrong letters
+     */
+    public void renderWrongLetters(){
+        if(WrongLetters == null || WrongLetters.size() == 0)
+            return;
+
+        String data = "-> Wrong played letters: [ ";
+        for(String l:WrongLetters)
+            data += l + "; ";
+
+        data += "]";
+        System.out.println(data);
+    }
+
+    /**
      * Render hangman doll in DOS console
      */
-    protected void RenderDoll(){
+    public void renderDoll(){
         int wrongs = WrongLetters.size();
         boolean head = wrongs >= 1;
         boolean body = wrongs >= 2;
@@ -32,15 +62,20 @@ public class SecretWord {
         boolean leftLeg = wrongs >= 5;
         boolean rightLeg = wrongs >= 6;
 
-        System.out.println("+=====+");
-        System.out.println("||    |");
-        System.out.println("||    " + (head ? "o" : " "));
-        System.out.println("||   " + (leftArm ? "/" : " "));
+        System.out.print("+=====+");
+        System.out.print("\n||    |");
+        System.out.print("\n||    " + (head ? "o" : " "));
+
+        System.out.print("\n||   ");
+        System.out.print((leftArm ? "/" : " "));
         System.out.print(body ? "|" : " ");
         System.out.print(rightArm ? "\\" : " ");
-        System.out.println("||   " + (leftLeg ? "/" : " "));
-        System.out.print(rightArm ? " \\" : " ");
-        System.out.println("------------");
+
+        System.out.print("\n||   ");
+        System.out.print(leftLeg ? "/" : " ");
+        System.out.print(rightLeg ? " \\" : " ");
+
+        System.out.print("\n------------");
     }
 
     /**
@@ -48,7 +83,7 @@ public class SecretWord {
      * @param letter to play
      * @return play result
      */
-    protected PlayResult PlayLetter(String letter){
+    public PlayResult playLetter(String letter){
         //Validate letter size
         if(letter == null || letter.isEmpty() || letter.length() > 1)
             return PlayResult.InvalidSize;
@@ -57,15 +92,26 @@ public class SecretWord {
         if(CorrectLetters.contains(letter) || WrongLetters.contains(letter))
             return PlayResult.LetterAlreadyPlayed;
 
+        //Result of round
+        PlayResult result = PlayResult.WrongLetter;
+
         //Check if word contains letter
         if(Word.contains(letter)){
             CorrectLetters.add(letter);
-            return PlayResult.CorrectLetter;
+            result = PlayResult.CorrectLetter;
         }
+        else
+            WrongLetters.add(letter);
 
-        //Add wrong letter and result Wrong result
-        WrongLetters.add(letter);
-        return PlayResult.WrongLetter;
+        //Check if lose game
+        if(WrongLetters.size() >= 6)
+            result = PlayResult.LoseGame;
+
+        //Check if win game
+        if(CorrectLetters.size() == Word.length())
+            result = PlayResult.WinGame;
+
+        return result;
     }
 
     @Override
