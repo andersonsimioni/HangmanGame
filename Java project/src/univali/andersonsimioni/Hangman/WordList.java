@@ -6,13 +6,14 @@ import java.util.ArrayList;
 
 public class WordList {
     private final ArrayList<String> wordlist;
+    private final String Path = "WordList.txt";
 
     /**
      * Constructon for WordList class
-     * @param path for wordlist text file
+     * @param fileName for wordlist text file
      */
-    public WordList(String path) {
-        ArrayList<String> lines = univali.andersonsimioni.Files.FileIO.ReadLines(path);
+    public WordList(String fileName) {
+        ArrayList<String> lines = univali.andersonsimioni.Files.FileIO.ReadLines(fileName);
         this.wordlist = lines;
     }
 
@@ -30,10 +31,10 @@ public class WordList {
      * get new SecretWord with word from wordlist file
      * @return new SecretWord
      */
-    public String getSecretWord(){
+    public SecretWord getSecretWord(){
         Integer linesNumber = this.wordlist.size();
         String secret = this.wordlist.get(this.getRandomNumber(0, linesNumber));
 
-        return secret;
+        return new SecretWord(secret);
     }
 }

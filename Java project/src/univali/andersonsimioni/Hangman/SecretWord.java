@@ -68,6 +68,13 @@ public class SecretWord {
         return PlayResult.WrongLetter;
     }
 
+    @Override
+    public String toString() {
+        return "SecretWord{" +
+                "Word='" + Word + '\'' +
+                '}';
+    }
+
     /**
      * Custom constructor
      * @param word to place secret word
