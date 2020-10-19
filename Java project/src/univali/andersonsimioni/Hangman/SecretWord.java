@@ -75,7 +75,7 @@ public class SecretWord {
         System.out.print(leftLeg ? "/" : " ");
         System.out.print(rightLeg ? " \\" : " ");
 
-        System.out.print("\n------------");
+        System.out.print("\n------------\n");
     }
 
     /**
@@ -114,11 +114,21 @@ public class SecretWord {
         return result;
     }
 
+
     @Override
     public String toString() {
         return "SecretWord{" +
                 "Word='" + Word + '\'' +
                 '}';
+    }
+
+    public boolean haveLetter(String letter){
+        if(this.CorrectLetters.contains(letter)){
+            this.CorrectLetters.remove(letter);
+            return true;
+        } else {
+            return false;
+        }
     }
 
     /**
