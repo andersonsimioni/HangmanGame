@@ -1,0 +1,13 @@
+window_sizes 1366 738 320 1042 590 104
+
+diagrams
+  active  sequencediagram_ref 128002 // SequenceDiagram
+    120 90 100 A4 0 0
+end
+show_stereotypes
+selected sequencediagram_ref 128002 // SequenceDiagram
+open
+  usecaseview_ref 128123 // UseCase
+  class_ref 128251 // Game
+end
+end

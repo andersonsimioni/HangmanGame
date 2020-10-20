@@ -1,7 +1,7 @@
 format 222
 "Hangman" // Hangman
-  revision 5
-  modified_by 123 "DEBUG"
+  revision 7
+  modified_by 2 "bit"
   // class settings
   
   classdiagramsettings member_max_width 0 end
@@ -52,7 +52,7 @@ format 222
     activitydiagramsettings
      end
     usecasediagram 128123 "Diagram"
-      usecasediagramsettings end
+      usecasediagramsettings draw_all_relations no end
       size A4
     end
 
@@ -206,7 +206,7 @@ format 222
       end
     end
 
-    usecase 128507 "ExitGame"
+    usecase 128507 "EndGame"
       
       usecasediagramsettings end
       
@@ -370,6 +370,43 @@ format 222
       sequencediagramsettings end
       overlapping_bars size A4
     end
+
+    usecase 134530 "readWordlistFile"
+      
+      usecasediagramsettings end
+      
+      sequencediagramsettings end
+      
+      collaborationdiagramsettings end
+      
+      classdiagramsettings member_max_width 0 end
+      
+      classcompositediagramsettings end
+      
+      objectdiagramsettings end
+      
+      objectcompositediagramsettings end
+      
+      statediagramsettings
+       end
+      
+      activitydiagramsettings
+       end
+      simplerelation 134530
+	-_->
+	  on usecase_ref 134530 // readWordlistFile
+      end
+
+      simplerelation 134658
+	-_->
+	  on usecase_ref 134530 // readWordlistFile
+      end
+
+      simplerelation 134786
+	-_->
+	  on usecase_ref 134530 // readWordlistFile
+      end
+    end
   end
 
   classview 128123 "AllClassesView"
@@ -392,11 +429,6 @@ format 222
     
     activitydiagramsettings
      end
-    sequencediagram 128251 "SequenceDiagram"
-      sequencediagramsettings end
-      overlapping_bars size A4
-    end
-
     classdiagram 128379 "ClassDiagram"
       classdiagramsettings draw_all_relations no member_max_width 0 end
       size A4
@@ -463,16 +495,6 @@ format 222
 	idl_decl ""
 	mysql_decl ""
 	MysqlColumn
-      end
-
-      operation 129531 "exitGame"
-	public explicit_return_type "void"
-	nparams 0
-	
-	
-	
-	
-	
       end
 
       classrelation 134907 // <association>
@@ -552,6 +574,26 @@ format 222
 	idl_decl ""
 	mysql_decl ""
 	MysqlColumn
+      end
+
+      operation 135170 "addPointToPlayer"
+	public explicit_return_type "void"
+	nparams 0
+	
+	
+	
+	
+	
+      end
+
+      operation 135298 "checkIfPlayerWin"
+	public explicit_return_type "void"
+	nparams 0
+	
+	
+	
+	
+	
       end
     end
 

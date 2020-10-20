@@ -41,7 +41,7 @@ public class FileIO {
                 lines.add(myReader.nextLine());
 
             return lines;
-        }catch (FileNotFoundException fileNotFoundException){
+        } catch (FileNotFoundException fileNotFoundException){
             System.out.println("File not found '" + path + "'\n");
             System.out.println("StackTrace: " + fileNotFoundException.getStackTrace());
             return null;

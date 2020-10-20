@@ -12,8 +12,15 @@ public class Game {
      */
     public Game(Player player) {
         this.WordList = new WordList();
-        this.LocalSecretWord = this.WordList.getSecretWord();
         this.Player = player;
+    }
+
+    public void startGame(){
+        this.LocalSecretWord = this.WordList.getSecretWord();
+    }
+
+    public void endGame(){
+        this.LocalSecretWord = null;
     }
 
     /**
@@ -63,6 +70,9 @@ public class Game {
     private void checkIfPlayerWin(){
         if(this.LocalPlayResult == SecretWord.PlayResult.WinGame)
             this.addPointToPlayer();
+        else if(this.LocalPlayResult == SecretWord.PlayResult.LoseGame){
+            this.endGame();
+        }
     }
 
     /**
@@ -70,6 +80,10 @@ public class Game {
      * @param letter
      */
     public void tryLetter(String letter){
+        if(this.LocalSecretWord == null){
+            System.out.println("Game ended, please start a new game to continue\nYou score: "+this.Player.getScore());
+            return;
+        }
         if(!gameEnded()) {
             this.LocalPlayResult = this.LocalSecretWord.playLetter(letter);
             this.LocalSecretWord.renderDoll();
