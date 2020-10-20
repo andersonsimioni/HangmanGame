@@ -32,7 +32,10 @@ public class SecretWord {
         result = secretWord.playLetter("c");
         result = secretWord.playLetter("d");
         result = secretWord.playLetter("t");
-        result = secretWord.playLetter("sdnf");
+        result = secretWord.playLetter("z");
+        result = secretWord.playLetter("x");
+        result = secretWord.playLetter("y");
+        //result = secretWord.playLetter("sdnf");
 
         secretWord.renderDoll();
     }
