@@ -51,6 +51,18 @@ public class SecretWord {
     }
 
     /**
+     * Render word with only correct letters
+     */
+    public void renderSemiWord(){
+        String word = "";
+        char[] chars = Word.toCharArray();
+        for(char c : chars)
+            word += CorrectLetters.contains(String.valueOf(c)) ? c : "_";
+
+        System.out.println(word);
+    }
+
+    /**
      * Render hangman doll in DOS console
      */
     public void renderDoll(){
@@ -114,21 +126,11 @@ public class SecretWord {
         return result;
     }
 
-
     @Override
     public String toString() {
         return "SecretWord{" +
                 "Word='" + Word + '\'' +
                 '}';
-    }
-
-    public boolean haveLetter(String letter){
-        if(this.CorrectLetters.contains(letter)){
-            this.CorrectLetters.remove(letter);
-            return true;
-        } else {
-            return false;
-        }
     }
 
     /**

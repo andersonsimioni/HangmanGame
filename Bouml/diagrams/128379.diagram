@@ -14,7 +14,7 @@ classcanvas 128379 class_ref 128379 // FileIO
 end
 classcanvas 128507 class_ref 128507 // WorldList
   classdiagramsettings member_max_width 0 end
-  xyz 585 40 2000
+  xyz 590 42 2000
 end
 classcanvas 128763 class_ref 128635 // SecretWord
   classdiagramsettings member_max_width 0 end

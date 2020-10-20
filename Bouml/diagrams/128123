@@ -1,7 +1,7 @@
 format 222
 "Hangman" // Hangman
-  revision 3
-  modified_by 2 "bit"
+  revision 4
+  modified_by 123 "DEBUG"
   // class settings
   
   classdiagramsettings member_max_width 0 end
@@ -308,7 +308,7 @@ format 222
       explicit_switch_type ""
       mysql_decl ""
       
-      attribute 128763 "Words"
+      attribute 128763 "WordList"
 	const_attribute private explicit_type "string"
 	stereotype "list"
 	cpp_decl ""
@@ -318,16 +318,6 @@ format 222
 	idl_decl ""
 	mysql_decl ""
 	MysqlColumn
-      end
-
-      operation 129019 "Load"
-	class_operation public explicit_return_type "void"
-	nparams 0
-	
-	
-	
-	
-	
       end
 
       classrelation 128123 // <association>
@@ -362,6 +352,17 @@ format 222
 	    classrelation_ref 135035 // <association>
 	  b role_name "" private
 	    classrelation_ref 135163 // <association>
+      end
+
+      attribute 136059 "FileName"
+	class_attribute private explicit_type "string"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
       end
     end
 
@@ -411,7 +412,7 @@ format 222
       explicit_switch_type ""
       mysql_decl ""
       
-      operation 128123 "NewGame"
+      operation 128123 "Game"
 	public return_type class_ref 128251 // Game
 	nparams 0
 	
@@ -432,7 +433,7 @@ format 222
 	MysqlColumn
       end
 
-      operation 128507 "PlayLetter"
+      operation 128507 "playLetter"
 	protected explicit_return_type ""
 	nparams 1
 	  param in name "letter" explicit_type "char"
@@ -443,7 +444,7 @@ format 222
 	
       end
 
-      operation 128763 "RenderGame"
+      operation 128763 "renderGame"
 	private explicit_return_type "void"
 	nparams 0
 	
@@ -453,7 +454,7 @@ format 222
 	
       end
 
-      attribute 128891 "SecretWord"
+      attribute 128891 "LocalSecretWord"
 	const_attribute private type class_ref 128635 // SecretWord
 	cpp_decl ""
 	java_decl ""
@@ -464,7 +465,7 @@ format 222
 	MysqlColumn
       end
 
-      operation 129531 "ExitGame"
+      operation 129531 "exitGame"
 	public explicit_return_type "void"
 	nparams 0
 	
@@ -482,7 +483,7 @@ format 222
 	relation_ref 134907 // <association>
       end
 
-      operation 136059 "StartGame"
+      operation 136059 "startGame"
 	public explicit_return_type "void"
 	nparams 0
 	
@@ -492,7 +493,7 @@ format 222
 	
       end
 
-      operation 136187 "EndGame"
+      operation 136187 "endGame"
 	private explicit_return_type ""
 	nparams 1
 	  param in name "result" explicit_type "PlayResult"
@@ -530,6 +531,28 @@ format 222
 	
 	
       end
+
+      attribute 135803 "LocalPlayResult"
+	private explicit_type "SecretWord.PlayResult"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 135931 "WordList"
+	const_attribute private type class_ref 128507 // WorldList
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
     end
 
     class 128379 "FileIO"
@@ -542,7 +565,7 @@ format 222
       explicit_switch_type ""
       mysql_decl ""
       
-      operation 128891 "ReadLines"
+      operation 128891 "readLines"
 	public explicit_return_type "string"
 	nparams 1
 	  param in name "Path" explicit_type "string"
@@ -613,7 +636,7 @@ format 222
 	MysqlColumn
       end
 
-      operation 129275 "RenderDoll"
+      operation 129275 "renderDoll"
 	public explicit_return_type "void"
 	nparams 0
 	
@@ -623,7 +646,7 @@ format 222
 	
       end
 
-      operation 129403 "PlayLetter"
+      operation 129403 "playLetter"
 	public explicit_return_type "PlayResult"
 	nparams 0
 	
