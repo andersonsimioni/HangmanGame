@@ -8,11 +8,11 @@ public class SecretWord {
      * Player round result
      */
     public enum PlayResult{
-        LoseGame,
         WinGame,
+        LoseGame,
         WrongLetter,
-        InvalidSize,
         CorrectLetter,
+        InvalidLetter,
         LetterAlreadyPlayed
     }
 
@@ -62,19 +62,23 @@ public class SecretWord {
         boolean leftLeg = wrongs >= 5;
         boolean rightLeg = wrongs >= 6;
 
+        //Head
         System.out.print("+=====+");
         System.out.print("\n||    |");
         System.out.print("\n||    " + (head ? "o" : " "));
 
+        //Body and arms
         System.out.print("\n||   ");
         System.out.print((leftArm ? "/" : " "));
         System.out.print(body ? "|" : " ");
         System.out.print(rightArm ? "\\" : " ");
 
+        //Legs
         System.out.print("\n||   ");
         System.out.print(leftLeg ? "/" : " ");
         System.out.print(rightLeg ? " \\" : " ");
 
+        //End
         System.out.print("\n------------");
     }
 
@@ -86,7 +90,7 @@ public class SecretWord {
     public PlayResult playLetter(String letter){
         //Validate letter size
         if(letter == null || letter.isEmpty() || letter.length() > 1)
-            return PlayResult.InvalidSize;
+            return PlayResult.InvalidLetter;
 
         //Validate if letter already played
         if(CorrectLetters.contains(letter) || WrongLetters.contains(letter))
