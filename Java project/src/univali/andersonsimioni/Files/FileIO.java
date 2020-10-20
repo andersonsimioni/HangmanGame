@@ -29,7 +29,7 @@ public class FileIO {
      * @param fileName name of file to read in local path files
      * @return string data in lines of file
      */
-    public static ArrayList<String> ReadLines(String fileName){
+    public static ArrayList<String> readLines(String fileName){
         String path = selectCorrectPath(fileName);
 
         try {

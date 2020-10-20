@@ -1,22 +1,22 @@
 package univali.andersonsimioni.Hangman;
 
 public class Player {
-    private final String name;
-    private Integer score;
+    private final String Name;
+    private Integer Score;
 
     public Player(String name, Integer score) {
-        this.name = name;
+        this.Name = name;
     }
 
     public void addScore(Integer score){
-        this.score += score;
+        this.Score += score;
     }
 
     public String getName() {
-        return name;
+        return Name;
     }
 
     public Integer getScore() {
-        return score;
+        return (Score != null ? Score : 0);
     }
 }

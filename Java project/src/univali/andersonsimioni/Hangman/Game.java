@@ -1,62 +1,56 @@
 package univali.andersonsimioni.Hangman;
 
 public class Game {
-    private final WordList wordList;
-    private final Player player;
-    private SecretWord secretWord;
-    private SecretWord.PlayResult playResult;
+    private final WordList WordList;
+    private final Player Player;
+    private SecretWord LocalSecretWord;
+    private SecretWord.PlayResult LocalPlayResult;
 
     public Game(Player player) {
-        this.wordList = new WordList();
-        this.secretWord = this.wordList.getSecretWord();
-        this.player = player;
+        this.WordList = new WordList();
+        this.LocalSecretWord = this.WordList.getSecretWord();
+        this.Player = player;
     }
 
     public void getNewSecretWord() {
-        this.playResult = null;
-        this.secretWord = this.wordList.getSecretWord();
+        this.LocalPlayResult = null;
+        this.LocalSecretWord = this.WordList.getSecretWord();
     }
 
-    public SecretWord getSecretWord() {
-        return secretWord;
+    public SecretWord getLocalSecretWord() {
+        return LocalSecretWord;
     }
 
     private boolean gameEnded(){
-        return this.playResult == SecretWord.PlayResult.WinGame ||
-                this.playResult == SecretWord.PlayResult.LoseGame;
+        return this.LocalPlayResult == SecretWord.PlayResult.WinGame ||
+                this.LocalPlayResult == SecretWord.PlayResult.LoseGame;
     }
 
     private void showGameResult(){
-        if(this.playResult == SecretWord.PlayResult.WinGame){
-            System.out.println("You Win game");
+        switch (this.LocalPlayResult){
+            case WinGame -> System.out.println("You Win game");
+            case LoseGame -> System.out.println("You Lose game");
         }
-        if(this.playResult == SecretWord.PlayResult.LoseGame){
-            System.out.println("You Lose game");
-        }
-        if(this.player.getScore() != null){
-            System.out.println("Player score: "+this.player.getScore());
-        } else {
-            System.out.println("Player score: 0");
-        }
+
+        System.out.println("Player score: " + this.Player.getScore());
         System.out.println("To keep playing, solicit a new secret word");
     }
 
     private void addPointToPlayer(){
-        this.player.addScore(1);
+        this.Player.addScore(1);
     }
 
     private void checkIfPlayerWin(){
-        if(this.playResult == SecretWord.PlayResult.WinGame){
+        if(this.LocalPlayResult == SecretWord.PlayResult.WinGame)
             this.addPointToPlayer();
-        }
     }
 
     public void tryLetter(String letter){
         if(!gameEnded()) {
-            this.playResult = this.secretWord.playLetter(letter);
-            this.secretWord.renderDoll();
-            this.secretWord.renderCorrectLetters();
-            this.secretWord.renderWrongLetters();
+            this.LocalPlayResult = this.LocalSecretWord.playLetter(letter);
+            this.LocalSecretWord.renderDoll();
+            this.LocalSecretWord.renderCorrectLetters();
+            this.LocalSecretWord.renderWrongLetters();
         } else {
             this.checkIfPlayerWin();
             this.showGameResult();

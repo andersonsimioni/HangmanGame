@@ -12,7 +12,7 @@ public class FileIO {
      * this test use 'ReadLines.txt' file in local path
      */
     public static void TestReadLines(){
-        ArrayList<String> lines = univali.andersonsimioni.Files.FileIO.ReadLines("ReadLines.txt");
+        ArrayList<String> lines = univali.andersonsimioni.Files.FileIO.readLines("ReadLines.txt");
 
         for (String line:lines)
             System.out.println(line);
