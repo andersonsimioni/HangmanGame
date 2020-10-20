@@ -15,10 +15,16 @@ public class Game {
         this.Player = player;
     }
 
+    /**
+     * Start game with new secret word
+     */
     public void startGame(){
         this.LocalSecretWord = this.WordList.getSecretWord();
     }
 
+    /**
+     * Reset game's secret word
+     */
     public void endGame(){
         this.LocalSecretWord = null;
     }
@@ -51,7 +57,14 @@ public class Game {
         switch (this.LocalPlayResult){
             case WinGame -> System.out.println("You Win game");
             case LoseGame -> System.out.println("You Lose game");
+            case WrongLetter -> System.out.println("You wrong letter");
+            case CorrectLetter -> System.out.println("You strike letter");
+            case InvalidSize -> System.out.println("Please play valid letter");
+            case LetterAlreadyPlayed -> System.out.println("You already play this letter");
         }
+
+        if(!gameEnded())
+            return;
 
         System.out.println("Player score: " + this.Player.getScore());
         System.out.println("To keep playing, solicit a new secret word");
@@ -75,6 +88,8 @@ public class Game {
         }
     }
 
+
+
     /**
      * Try to play letter in secret word
      * @param letter
@@ -90,6 +105,9 @@ public class Game {
             this.LocalSecretWord.renderSemiWord();
             this.LocalSecretWord.renderCorrectLetters();
             this.LocalSecretWord.renderWrongLetters();
+            renderGameResult();
+
+            System.out.println("\n\n"); //Jump lines to view in test
         } else {
             this.checkIfPlayerWin();
             this.renderGameResult();

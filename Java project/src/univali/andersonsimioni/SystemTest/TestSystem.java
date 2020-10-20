@@ -8,9 +8,10 @@ import univali.andersonsimioni.Hangman.WordList;
 public class TestSystem {
 
     public static void run() {
-        Player player = new Player("Willian de Souza", 0);
+        Player player = new Player("Willian de Souza");
         Game game = new Game(player);
         game.startGame();
+
         game.tryLetter("a");
         game.tryLetter("b");
         game.tryLetter("b");

@@ -9,7 +9,7 @@ public class WordList {
     private static final String FileName = "WordList.txt";
 
     /**
-     * get new SecretWord with word from wordlist file
+     * get new SecretWord with word from wordList file
      * @return new SecretWord
      */
     public SecretWord getSecretWord(){

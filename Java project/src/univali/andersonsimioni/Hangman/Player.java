@@ -4,12 +4,20 @@ public class Player {
     private final String Name;
     private Integer Score;
 
-    public Player(String name, Integer score) {
+    public Player(String name) {
+        if(name == null || name.isEmpty())
+            throw new IllegalArgumentException("name is null or emtpy");
+
+        this.Score = 0;
         this.Name = name;
     }
 
-    public void addScore(Integer score){
-        this.Score += score;
+    /**
+     * Add points to player's score
+     * @param scorePoints
+     */
+    public void addScore(Integer scorePoints){
+        this.Score += scorePoints;
     }
 
     public String getName() {

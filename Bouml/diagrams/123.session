@@ -1,11 +1,9 @@
-window_sizes 1920 1013 450 1464 831 128
+window_sizes 1800 911 450 1344 729 128
 
 diagrams
   usecasediagram_ref 128123 // Diagram
     1171 661 100 A4 0 0
   active  classdiagram_ref 128379 // ClassDiagram
-    1464 831 100 A4 0 0
-  sequencediagram_ref 128251 // SequenceDiagram
     1464 831 100 A4 0 0
   sequencediagram_ref 128002 // SequenceDiagram
     1171 664 100 A4 0 0
@@ -14,6 +12,6 @@ show_stereotypes
 selected classdiagram_ref 128379 // ClassDiagram
 open
   usecaseview_ref 128123 // UseCase
-  classview_ref 128123 // AllClassesView
+  class_ref 128251 // Game
 end
 end
