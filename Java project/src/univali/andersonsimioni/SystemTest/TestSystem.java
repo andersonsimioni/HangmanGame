@@ -12,17 +12,14 @@ public class TestSystem {
         Game game = new Game(player);
         game.tryLetter("a");
         game.tryLetter("b");
+        game.tryLetter("b");
+        game.tryLetter("b123");
         game.tryLetter("c");
         game.tryLetter("d");
         game.tryLetter("e");
         game.tryLetter("f");
         game.tryLetter("g");
-        game.tryLetter("h");
-        game.tryLetter("i");
-        game.tryLetter("j");
-        game.tryLetter("k");
-        game.tryLetter("l");
-        game.tryLetter("m");
+
 
         System.out.println("\n\n<------ NEW WORD ------>\n");
         game.getNewSecretWord();

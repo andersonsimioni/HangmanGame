@@ -1,6 +1,6 @@
 format 222
 "Hangman" // Hangman
-  revision 4
+  revision 5
   modified_by 123 "DEBUG"
   // class settings
   
@@ -444,7 +444,7 @@ format 222
 	
       end
 
-      operation 128763 "renderGame"
+      operation 128763 "renderGameResult"
 	private explicit_return_type "void"
 	nparams 0
 	

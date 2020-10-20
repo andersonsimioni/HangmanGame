@@ -40,7 +40,7 @@ public class Game {
     /**
      * Render game result on console
      */
-    private void showGameResult(){
+    private void renderGameResult(){
         switch (this.LocalPlayResult){
             case WinGame -> System.out.println("You Win game");
             case LoseGame -> System.out.println("You Lose game");
@@ -78,7 +78,7 @@ public class Game {
             this.LocalSecretWord.renderWrongLetters();
         } else {
             this.checkIfPlayerWin();
-            this.showGameResult();
+            this.renderGameResult();
         }
     }
 
